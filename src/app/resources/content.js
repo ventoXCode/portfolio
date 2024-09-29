@@ -37,9 +37,9 @@ const social = [
     link: "",
   },
   {
-    name: "Email",
+    name: "geis.joris@gmail.com",
     icon: "email",
-    link: "geis.joris@gmail.com",
+    link: "",
   },
 ];
 
