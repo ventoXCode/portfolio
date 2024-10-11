@@ -1,11 +1,20 @@
-const baseURL = "nextjs-portfolio.up.railway.app";
+const baseURL = "demo.app";
+
+// Enable localization
+const i18n = false;
+
+// Manage localized content in the messages folder
+const i18nOptions = {
+  locales: ["en"], // A list of all locales that are supported, e.g. ['en','id']
+  defaultLocale: "en", // Locale used by default and as a fallback
+};
 
 const routes = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 // Enable password protection on selected routes
@@ -22,8 +31,8 @@ const effects = {
 
 const style = {
   theme: "dark", // dark | light
-  neutral: "sand", // sand | gray | slate
-  brand: "pink", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  neutral: "gray", // sand | gray | slate
+  brand: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "yellow", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
@@ -46,4 +55,14 @@ const mailchimp = {
   },
 };
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL };
+export {
+  routes,
+  protectedRoutes,
+  effects,
+  style,
+  display,
+  mailchimp,
+  baseURL,
+  i18n,
+  i18nOptions,
+};
