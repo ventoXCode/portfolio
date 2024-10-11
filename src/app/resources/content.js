@@ -37,9 +37,9 @@ const social = [
     link: "",
   },
   {
-    name: "Email",
+    name: "geis.joris@gmail.com",
     icon: "email",
-    link: "geis.joris@gmail.com",
+    link: "/about",
   },
 ];
 
@@ -113,7 +113,7 @@ const about = {
     ],
   },
   studies: {
-    display: false, // set to false to hide this section
+    display: true, // set to false to hide this section
     title: "Schule",
     institutions: [
       {
@@ -123,15 +123,17 @@ const about = {
     ],
   },
   technical: {
-    display: false, // set to false to hide this section
+    display: true, // set to false to hide this section
     title: "Technische Fähigkeiten",
     skills: [
       {
-        title: "Microsoft Office",
+        title: "Frameworks",
         description: (
           <>
-            Durch Kurse, unteranderem aus der Schule kann ich mit jeglichen
-            Office Programmen umgehen und diese bedienen.
+            React und Nextjs gehören für mich zum Alltag. Ich bin
+            selbstverständlich immer dafür bereit mich anzupassen und mich
+            weiterzuentwickeln, aber habe mich einfach in React verliebt.
+            Selbiges gilt natürlich für Tailwind.
           </>
         ),
         images: [],
@@ -141,7 +143,9 @@ const about = {
         description: (
           <>
             Seit ich 10 Jahre alt bin, sitze ich täglich am Computer und bin
-            daran gewöhnt mehrere Stunden täglich am PC zu verbringen.
+            daran gewöhnt mehrere Stunden täglich am PC zu verbringen. Das merke
+            ich unter anderem schon im Rücken, aber was kann ich mit 18 Jahren
+            schon sagen :)
           </>
         ),
         images: [],
