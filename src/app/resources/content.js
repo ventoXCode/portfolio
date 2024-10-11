@@ -37,15 +37,9 @@ const social = [
     link: "",
   },
   {
-<<<<<<< HEAD
-    name: "geis.joris@gmail.com",
-    icon: "email",
-    link: "/about",
-=======
     name: "Email",
     icon: "email",
     link: "geis.joris@gmail.com",
->>>>>>> 1a724b4 (portfolio)
   },
 ];
 
@@ -86,13 +80,9 @@ const about = {
         Ich bin angehender Fullstack Entwickler mit Erfahrungen in Nextjs,
         React, Tailwind, MongoDB, REST API. Ich liebe es mich stetig
         weiterzuentwickeln und neue Technologien zu lernen, weshalb ich auch
-<<<<<<< HEAD
-        immer auf der Suche nach neuen Herausforderungen bin.
-=======
         immer auf der Suche nach neuen Herausforderungen bin. Am Ende kommt es
         aber darauf an, ob ich euch überzeugen kann. Schaut euch also gerne
         meine Projekte an und schreibt mir gerne bei Interesse.
->>>>>>> 1a724b4 (portfolio)
       </>
     ),
   },
