@@ -50,9 +50,8 @@ const home = {
   headline: <>Frontend Developer</>,
   subline: (
     <>
-      Ich bin Joris, ein Frontend-Entwickler aus Deutschland. <br />
-      Ich befinde mich zwar noch in der Anfangsphase meiner Karriere,
-      <br /> kann aber kaum warten richtig durchzustarten.
+      Ich bin Joris, ein Frontend-Entwickler aus Deutschland <br /> und kann es
+      kaum erwarten richtig durchzustarten. <br />
     </>
   ),
 };
@@ -77,12 +76,25 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Ich bin angehender Fullstack Entwickler mit Erfahrungen in Nextjs,
-        React, Tailwind, MongoDB, REST API. Ich liebe es mich stetig
-        weiterzuentwickeln und neue Technologien zu lernen, weshalb ich auch
-        immer auf der Suche nach neuen Herausforderungen bin. Am Ende kommt es
-        aber darauf an, ob ich euch überzeugen kann. Schaut euch also gerne
-        meine Projekte an und schreibt mir gerne bei Interesse.
+        Als angehender Fullstack-Entwickler bringe ich fundierte Erfahrungen in
+        modernen Webtechnologien mit. Mein technisches Repertoire umfasst
+        Next.js und React für die Entwicklung dynamischer Benutzeroberflächen,
+        Tailwind CSS für stilvolles und responsives Design, sowie MongoDB und
+        REST APIs für leistungsstarke Backend-Lösungen.
+        <br />
+        <br />
+        Die Technologiewelt entwickelt sich ständig weiter - und genau das
+        begeistert mich. Mit Leidenschaft bleibe ich am Puls der Zeit und
+        erweitere kontinuierlich meine Fähigkeiten. Diese Neugier und der Drang
+        nach Weiterentwicklung treiben mich an, stets neue Herausforderungen zu
+        suchen und innovative Lösungen zu entwickeln.
+        <br />
+        <br />
+        Überzeugen Sie sich selbst von meinen Fähigkeiten und werfen Sie einen
+        Blick auf meine Projekte. Sie werden sehen, wie ich Technologien
+        einsetze, um kreative und effiziente Lösungen zu schaffen. Bei Interesse
+        an einer Zusammenarbeit freue ich mich sehr über Ihre Kontaktaufnahme.
+        Lassen Sie uns gemeinsam Ihre Visionen in die Realität umsetzen.
       </>
     ),
   },
@@ -96,14 +108,16 @@ const about = {
         role: "Schülerjob als Frontend Entwickler",
         achievements: [
           <>
-            Hier habe ich meine ersten Erfahrungen als Frontend Entwickler
-            sammeln können. Hier konnte ich endlich den Sprung von den
-            Grundlagen wie HTML, CSS und JavaScript zu modernen Frameworks wie
-            React und Next.js machen.
-          </>,
-          <>
-            Leider war es nur ein Schülerjob, aber ich konnte hier schon einiges
-            lernen und bin bereit für die nächste Herausforderung.
+            Während meiner Zeit als Frontend-Entwickler konnte ich meine
+            Fähigkeiten entscheidend ausbauen und den wichtigen Schritt von den
+            fundamentalen Webtechnologien zu fortgeschrittenen
+            Entwicklungsumgebungen vollziehen. Nach der sicheren Beherrschung
+            der Grundlagen –<strong> HTML, CSS und JavaScript </strong>– habe
+            ich mich erfolgreich in die Welt moderner Frameworks wie{" "}
+            <strong>React</strong> und <strong>Next.js</strong> eingearbeitet.
+            Diese Entwicklung ermöglichte es mir, komplexere und dynamischere
+            Webapplikationen zu erstellen und mein Verständnis für moderne
+            Webentwicklung deutlich zu vertiefen.
           </>,
         ],
         images: [
@@ -130,10 +144,11 @@ const about = {
         title: "Frameworks",
         description: (
           <>
-            React und Nextjs gehören für mich zum Alltag. Ich bin
-            selbstverständlich immer dafür bereit mich anzupassen und mich
-            weiterzuentwickeln, aber habe mich einfach in React verliebt.
-            Selbiges gilt natürlich für Tailwind.
+            <strong>React</strong> und <strong>Next.js</strong> sind meine
+            täglichen Begleiter in der Webentwicklung. Zusammen mit{" "}
+            <strong>Tailwind CSS</strong> bilden sie meine bevorzugte
+            Technologie-Kombination, die ich mit Begeisterung einsetze. Dennoch
+            bleibe ich stets offen für neue Entwicklungen und Technologien.
           </>
         ),
         images: [],
@@ -142,10 +157,10 @@ const about = {
         title: "Computer Erfahrungen",
         description: (
           <>
-            Seit ich 10 Jahre alt bin, sitze ich täglich am Computer und bin
-            daran gewöhnt mehrere Stunden täglich am PC zu verbringen. Das merke
-            ich unter anderem schon im Rücken, aber was kann ich mit 18 Jahren
-            schon sagen :)
+            Seit ich <strong>10 Jahre</strong> alt bin, sitze ich täglich am
+            Computer und bin daran gewöhnt mehrere Stunden täglich am PC zu
+            verbringen. Das merke ich unter anderem schon im Rücken, aber was
+            kann ich mit 19 Jahren schon sagen :)
           </>
         ),
         images: [],
