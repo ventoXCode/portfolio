@@ -57,7 +57,7 @@ const content = {
         stack: ["React", "TailwindCSS"]
       }
     ],
-    projectsTitle: 'Ausgewählte Projekte',
+    projectsTitle: 'Projekte',
     projectsSubtitle: 'Eine Auswahl meiner liebsten Entwicklungen und Forschungsprojekte.',
     projects: [
       {
