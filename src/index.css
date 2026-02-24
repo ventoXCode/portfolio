@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #2a2a2a;
+    --highlight: #64ffda;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-primary antialiased;
+    font-family: var(--font-body);
+    background-color: #000000;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[#2a2a2a]/40 backdrop-blur-md border border-white/5;
+  }
+  
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 8vw + 1rem, 6rem);
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  }
+
+  .text-fluid-body {
+    font-size: clamp(1rem, 0.5vw + 0.8rem, 1.25rem);
+  }
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+}
+
+.starry-bg {
+  background: #000000; /* True OLED Black */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
