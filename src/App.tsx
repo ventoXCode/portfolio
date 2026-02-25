@@ -245,10 +245,8 @@ const Navbar = ({ locale, setLocale, t }: { locale: Locale; setLocale: (l: Local
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 border-b",
-      scrolled 
-        ? "bg-[#1a1a1a]/80 backdrop-blur-lg border-white/5 py-3" 
-        : "bg-transparent border-transparent"
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 border-b bg-[#1a1a1a]/90 backdrop-blur-lg border-white/5",
+      !scrolled && "py-4 border-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.div 
@@ -371,17 +369,17 @@ export default function App() {
             </a>
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-4 pt-12">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-12">
             {t.metrics.map((m, i) => (
               <motion.div 
                 key={m.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + i * 0.1 }}
-                className="glass rounded-2xl p-3 text-center"
+                className="glass rounded-2xl p-2 sm:p-3 text-center"
               >
-                <div className="text-lg sm:text-xl font-display font-bold text-highlight">{m.value}</div>
-                <div className="text-[9px] sm:text-[10px] text-secondary uppercase tracking-widest mt-1">{m.label}</div>
+                <div className="text-sm sm:text-xl font-display font-bold text-highlight">{m.value}</div>
+                <div className="text-[8px] sm:text-[10px] text-secondary uppercase tracking-widest mt-0.5 truncate">{m.label}</div>
               </motion.div>
             ))}
           </div>
