@@ -369,17 +369,17 @@ export default function App() {
             </a>
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-12">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-12">
             {t.metrics.map((m, i) => (
               <motion.div 
                 key={m.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + i * 0.1 }}
-                className="glass rounded-2xl p-2 sm:p-3 text-center"
+                className="glass rounded-2xl p-3 sm:p-3 text-center"
               >
-                <div className="text-sm sm:text-xl font-display font-bold text-highlight">{m.value}</div>
-                <div className="text-[8px] sm:text-[10px] text-secondary uppercase tracking-widest mt-0.5 truncate">{m.label}</div>
+                <div className="text-base sm:text-xl font-display font-bold text-highlight">{m.value}</div>
+                <div className="text-[9px] sm:text-[10px] text-secondary uppercase tracking-widest mt-1">{m.label}</div>
               </motion.div>
             ))}
           </div>
