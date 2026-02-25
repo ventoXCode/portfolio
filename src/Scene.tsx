@@ -48,7 +48,7 @@ export default function Scene() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
       {/* Increased FOV and pulled camera back to see more of the sphere */}
-      <Canvas camera={{ position: [0, 0, 3], fov: 75 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 3], fov: 75 }} dpr={1}>
         <color attach="background" args={['#000000']} />
         <StarField />
       </Canvas>

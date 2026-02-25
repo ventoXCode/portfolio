@@ -88,7 +88,8 @@ const content = {
       meta: "Fachhochschulreife mit praktischem Teil im Fullstack-Umfeld"
     },
     contactTitle: 'Kontakt aufnehmen',
-    contactSubtitle: 'Ich bin immer offen für neue Projekte, kreative Ideen oder Möglichkeiten, Teil deiner Vision zu werden.'
+    contactSubtitle: 'Ich bin immer offen für neue Projekte, kreative Ideen oder Möglichkeiten, Teil deiner Vision zu werden.',
+    location: 'Oldenburg, Deutschland'
   },
   en: {
     nav: ['Experience', 'Projects', 'Skills', 'Contact'],
@@ -153,7 +154,8 @@ const content = {
       meta: "University entrance qualification with practical fullstack track"
     },
     contactTitle: 'Get in Touch',
-    contactSubtitle: "I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions."
+    contactSubtitle: "I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
+    location: 'Oldenburg, Germany'
   }
 };
 
@@ -161,7 +163,6 @@ const persona = {
   name: "Joris Geis",
   email: "geis.joris@gmail.com",
   github: "https://github.com/ventoXCode",
-  location: "Oldenburg, Germany",
   skills: [
     { group: "Frontend", items: ["React", "Next.js", "TypeScript", "TailwindCSS"], icon: Layers },
     { group: "Backend", items: ["Node.js", "REST APIs", "MongoDB", "Docker"], icon: Code2 },
@@ -245,8 +246,10 @@ const Navbar = ({ locale, setLocale, t }: { locale: Locale; setLocale: (l: Local
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 border-b bg-[#1a1a1a]/90 backdrop-blur-lg border-white/5",
-      !scrolled && "py-4 border-transparent"
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 border-b",
+      scrolled 
+        ? "bg-[#1a1a1a]/80 backdrop-blur-lg border-white/5 py-3" 
+        : "bg-transparent border-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.div 
@@ -312,11 +315,10 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen text-fluid-body">
-      <div className="noise-bg" />
       <Scene />
       <Navbar locale={locale} setLocale={setLocale} t={t} />
 
-      <main className="max-w-7xl mx-auto px-6 pt-32 pb-24 space-y-40 relative z-10">
+      <main className="max-w-7xl mx-auto px-6 pt-32 pb-12 space-y-32 relative z-10">
         
         {/* Hero Section */}
         <section id="home" className="min-h-[70vh] flex flex-col justify-center items-start space-y-8">
@@ -369,23 +371,19 @@ export default function App() {
             </a>
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-12">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-12 w-full">
             {t.metrics.map((m, i) => (
               <motion.div 
                 key={m.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + i * 0.1 }}
-                className="glass rounded-2xl p-3 sm:p-3 text-center"
+                className="glass rounded-2xl p-3 sm:p-4 text-center flex flex-col items-center justify-center"
               >
-                <div className="text-base sm:text-xl font-display font-bold text-highlight">{m.value}</div>
-                <div className="text-[9px] sm:text-[10px] text-secondary uppercase tracking-widest mt-1 px-1">{m.label}</div>
+                <div className="text-sm sm:text-2xl font-display font-bold text-highlight leading-tight truncate max-w-full">{m.value}</div>
+                <div className="text-[8px] sm:text-xs text-secondary uppercase tracking-widest mt-1 leading-tight truncate max-w-full">{m.label}</div>
               </motion.div>
             ))}
-          </div>
-          
-          <div className="absolute bottom-10 left-10 text-secondary text-sm">
-            @JorisGeis · Built with passion
           </div>
         </section>
 
@@ -498,12 +496,12 @@ export default function App() {
         </section>
 
         {/* Education & Contact */}
-        <div className="grid lg:grid-cols-2 gap-20">
-          <section id="education">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <section id="education" className="flex flex-col">
             <SectionHeading>{t.educationTitle}</SectionHeading>
-            <GlassCard className="flex gap-6 items-start">
-              <div className="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center">
-                <GraduationCap />
+            <GlassCard className="flex gap-6 items-start flex-1">
+              <div className="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-highlight">
+                <GraduationCap size={24} />
               </div>
               <div className="space-y-2">
                 <div className="text-secondary text-sm flex items-center gap-2">
@@ -512,44 +510,91 @@ export default function App() {
                   <span>{t.education.institution}</span>
                 </div>
                 <h3 className="text-2xl font-bold">{t.education.degree}</h3>
-                <p className="text-secondary">{t.education.meta}</p>
+                <p className="text-secondary text-sm leading-relaxed">{t.education.meta}</p>
               </div>
             </GlassCard>
           </section>
 
-          <section id={locale === 'de' ? 'kontakt' : 'contact'}>
+          <section id={locale === 'de' ? 'kontakt' : 'contact'} className="flex flex-col">
             <SectionHeading>{t.contactTitle}</SectionHeading>
-            <div className="space-y-8">
-              <p className="text-secondary text-lg">
+            <GlassCard className="flex flex-col justify-between flex-1 gap-8">
+              <p className="text-secondary text-sm leading-relaxed">
                 {t.contactSubtitle}
               </p>
               <div className="space-y-4">
                 <a 
                   href={`mailto:${persona.email}`}
-                  className="flex items-center gap-4 text-2xl font-bold group"
+                  className="flex items-center gap-4 group"
                 >
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-highlight/10 group-hover:border-highlight/20 transition-all">
-                    <Mail />
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-highlight/10 group-hover:border-highlight/20 transition-all text-secondary group-hover:text-highlight">
+                    <Mail size={20} />
                   </div>
-                  <span className="group-hover:text-highlight transition-colors text-base sm:text-2xl">{persona.email}</span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">{locale === 'de' ? 'Schreib mir' : 'Send an email'}</span>
+                    <span className="group-hover:text-highlight transition-colors text-base font-bold">{persona.email}</span>
+                  </div>
                 </a>
-                <div className="flex items-center gap-4 text-secondary">
-                  <MapPin size={20} />
-                  <span>{persona.location}</span>
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-secondary">
+                    <MapPin size={20} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">{locale === 'de' ? 'Standort' : 'Location'}</span>
+                    <span className="text-base font-bold text-white/90">{t.location}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </GlassCard>
           </section>
         </div>
 
       </main>
 
-      <footer className="py-12 px-6 border-t border-white/5 mt-40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-secondary text-sm">
-          <p>© 2026 {persona.name}. {locale === 'de' ? 'Mit Sorgfalt entwickelt.' : 'Designed with care.'}</p>
-          <div className="flex gap-8">
-            <a href={persona.github} target="_blank" className="hover:text-white transition-colors">GitHub</a>
-            <a href={`mailto:${persona.email}`} className="hover:text-white transition-colors">Email</a>
+      <footer className="py-20 px-6 border-t border-white/5 mt-20 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+          <div className="space-y-4">
+            <div 
+              className="text-2xl font-display font-bold tracking-tighter cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              JG<span className="text-highlight">.</span>
+            </div>
+            <p className="text-secondary text-sm max-w-xs leading-relaxed">
+              {locale === 'de' 
+                ? 'Spezialisiert auf die Entwicklung moderner Webanwendungen mit Fokus auf UX und Performance.' 
+                : 'Specialized in building modern web applications with a focus on UX and performance.'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:flex sm:gap-20 gap-10">
+            <div className="space-y-4">
+              <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/30">Links</h4>
+              <div className="flex flex-col gap-2 text-sm text-secondary">
+                {t.nav.map((item: string) => (
+                  <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-highlight transition-colors">
+                    {item}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/30">Connect</h4>
+              <div className="flex flex-col gap-2 text-sm text-secondary">
+                <a href={persona.github} target="_blank" className="hover:text-highlight transition-colors flex items-center gap-2">
+                  <Github size={14} /> GitHub
+                </a>
+                <a href={`mailto:${persona.email}`} className="hover:text-highlight transition-colors flex items-center gap-2">
+                  <Mail size={14} /> Email
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto pt-20 mt-20 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-white/20 font-medium">
+          <p>© 2026 {persona.name}. {locale === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}</p>
+          <div className="flex gap-6">
+            <p>{locale === 'de' ? 'Mit Sorgfalt entwickelt' : 'Designed with care'}</p>
           </div>
         </div>
       </footer>
