@@ -319,7 +319,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-6 pt-32 pb-24 space-y-40 relative z-10">
         
         {/* Hero Section */}
-        <section id="home" className="min-h-[70vh] flex flex-col justify-center items-start space-y-8">
+        <section id="home" className="min-h-[70vh] flex flex-col justify-center items-start space-y-8 px-4 sm:px-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -379,7 +379,7 @@ export default function App() {
                 className="glass rounded-2xl p-3 sm:p-3 text-center"
               >
                 <div className="text-base sm:text-xl font-display font-bold text-highlight">{m.value}</div>
-                <div className="text-[9px] sm:text-[10px] text-secondary uppercase tracking-widest mt-1">{m.label}</div>
+                <div className="text-[9px] sm:text-[10px] text-secondary uppercase tracking-widest mt-1 px-1">{m.label}</div>
               </motion.div>
             ))}
           </div>
