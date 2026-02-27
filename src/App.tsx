@@ -314,6 +314,7 @@ export default function App() {
   const t = content[locale];
 
   return (
+    <>
     <div className="relative min-h-screen text-fluid-body">
       <Scene />
       <Navbar locale={locale} setLocale={setLocale} t={t} />
@@ -599,5 +600,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
